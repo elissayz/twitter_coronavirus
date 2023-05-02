@@ -31,7 +31,6 @@ Merge the data files by running:
 $ ./src/reduce.py --input_paths outputs/geoTwitter20-02-16.zip.lang outputs/geoTwitter20-02-17.zip.lang --output_path=reduced.lang
 ```
 $ ./src/reduce.py --input_paths outputs/geoTwitter*.lang --output_path=reduced.lang
-```
 
 
 The format of the data files that `reduce.py` outputs is the same format as the data files that `map.py` outputs.
