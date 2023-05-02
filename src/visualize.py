@@ -12,6 +12,9 @@ args = parser.parse_args()
 import os
 import json
 from collections import Counter,defaultdict
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 
 # open the input path
 with open(args.input_path) as f:
@@ -27,8 +30,6 @@ items = sorted(counts[args.key].items(), key=lambda item: (item[1],item[0]), rev
 for k,v in items:
     print(k,':',v)
 
-import time
-import matplotlib.pyplot as plt
 
 #make list of vals and keys for graphs
 top_items = items[:10] 
