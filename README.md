@@ -37,50 +37,6 @@ $ unzip -p /data/Twitter\ dataset/geoTwitter20-01-01.zip | head -n1 | python3 -m
 
 **About MapReduce:**
 
-You will follow the [MapReduce](https://en.wikipedia.org/wiki/MapReduce) procedure to analyze these tweets.
-MapReduce is a famous procedure for large scale parallel processing that is widely used in industry.
-It is a 3 step procedure summarized in the following image:
-
-<img src=mapreduce.png width=100% />
-
-I have already done the partition step for you (by splitting up the tweets into one file per day).
-You will have to do the map and reduce steps.
-
-**MapReduce Runtime:**
-
-Let $n$ be the size of the dataset and $p$ be the number of processors used to do the computation.
-The simplest and most common scenario is that the map procedure takes time $O(n)$ and the reduce procedure takes time $O(1)$.
-(These will be the runtimes of our map/reduce procedures.)
-In this case, the overall runtime is $O(n/p + \log p)$.
-In the typical case when $p$ is much smaller than $n$,
-then the runtime simplifies to $O(n/p)$.
-This means that:
-1. doubling the amount of data will cause the analysis to take twice as long;
-1. doubling the number of processors will cause the analysis to take half as long;
-1. if you want to add more data and keep the processing time the same, then you need to add a proportional number of processors.
-
-More complex runtimes are possible.
-Merge sort over MapReduce is the classic example. 
-Here, mapping is equivalent to sorting and so takes time $O(n \log n)$,
-and reducing is a call to the `_merge` function that takes time $O(n)$.
-But they are both rare in practice and require careful math to describe,
-so we will ignore them.
-In the merge sort example, it requires $p=n$ processors just to reduce the runtime down to $O(n)$...
-that's a lot of additional computing power for very little gain,
-and so is impractical.
-
-It is currently not known which algorithms can be parallelized with MapReduce and which algorithms cannot be parallelized this way.
-Most computer scientists believe there are some algorithms which cannot be parallelized,
-but we don't yet have a proof that this is the case.
-
-## Background Tasks
-
-Complete the following tasks to familiarize yourself with the sample code:
-
-**Task 0: Setup**
-
-Fork this repo and clone it onto the lambda server.
-
 **Task 1: Map**
 
 The `map.py` file processes the zip file for an individual day.
@@ -252,19 +208,4 @@ The assignment is worth 32 points:
 1. 8 points for Task 3 plots
 1. 8 points for Task 4 plots
 
-The most common ways to miss points are:
-1. having incorrect data plotted (because the map program didn't finish running on all of the inputs)
-1. having illegible plots that are not "reasonably" formatted
 
-Notice that we are not using CI to grade this assignment.
-There's two reasons:
-
-1. You can get slightly different numbers depending on some of the design choices you make in your code.
-    For example, should the term `corona` count tweets that contain `coronavirus` as well as tweets that contain just `corona`?
-    These are relatively insignificant decisions.
-    I'm more concerned with your ability to write a shell script and use `nohup`, `&`, and other process control tools effectively.
-
-1. The dataset is too large to upload to github actions.
-    In general, writing test cases for large data analysis tasks is tricky and rarely done.
-    Writing correct code without test cases is hard,
-    and so many (most?) analysis of large datasets contain lots of bugs.
