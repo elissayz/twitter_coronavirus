@@ -1,13 +1,6 @@
 # Coronavirus twitter analysis
 
-You will scan all geotagged tweets sent in 2020 to monitor for the spread of the coronavirus on social media.
-
-**Learning Objectives:**
-
-1. work with large scale datasets
-1. work with multilingual text
-1. use the MapReduce divide-and-conquer paradigm to create parallel code
-
+In this project I analyzed data from a database that contains Tweets from . In particular I analyzed the data from the year 2020, when the pandemic came into full effect across the world. 
 ## Background
 
 **About the Data:**
