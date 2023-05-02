@@ -26,3 +26,33 @@ if args.percent:
 items = sorted(counts[args.key].items(), key=lambda item: (item[1],item[0]), reverse=True)
 for k,v in items:
     print(k,':',v)
+
+import time
+import matplotlib.pyplot as plt
+
+#make list of vals and keys for graphs
+top_items = items[:10] 
+key_range = [item[0] for item in top_items]
+value_range = [item[1] for item in top_items]
+keys = key_range[::-1]
+values = value_range[::-1]
+
+# plotting the graph
+plt.bar(range(len(keys)), values)
+plt.xticks(range(len(keys)), keys)
+
+# giving labels
+if args.input_path[-1] == 'g':
+    plt.xlabel('Language')
+else:
+    plt.xlabel('Country')
+if args.percent:
+    plt.ylabel('Percent of Total')
+else:
+    plt.ylabel('Tweet Volume')
+
+# save the bar graph as a PNG file
+if args.input_path[-1] == 'g':
+    plt.savefig(args.key[1:] + '_lang.png')
+else:
+    plt.savefig(args.key[1:] + '_country.png')
