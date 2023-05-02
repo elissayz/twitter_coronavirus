@@ -33,7 +33,6 @@ $ ./src/reduce.py --input_paths outputs/geoTwitter20-02-16.zip.lang outputs/geoT
 $ ./src/reduce.py --input_paths outputs/geoTwitter*.lang --output_path=reduced.lang
 ```
 
-**Task 2b: Visualize**
 
 The format of the data files that `reduce.py` outputs is the same format as the data files that `map.py` outputs.
 Therefore, we can use the same visualization code on both of them.
