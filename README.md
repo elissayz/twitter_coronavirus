@@ -26,7 +26,7 @@ The following are the resulting graphs from running the visualization commands m
 
 ### Graphic Representation of #코로나바이러 by country
 
-![#코로나바이러 by country](코로나바이러_country.png)
+![#코로나바이러by country](코로나바이러스_country.png)
 
 As we would expect, this hashtag was used mostly in Korea.
 
@@ -36,7 +36,7 @@ As we would expect, this hashtag was used mostly in Korea.
 
 ### We can also see the representation of #코로나바이러 by language
 
-![#코로나바이러 by country]((코로나바이러스_lang.png)
+![#코로나바이러by language](코로나바이러스_lang.png)
 
 Once again, since the language of the hashtag is Korean, we would expect it to be used 
 most in that situation.
