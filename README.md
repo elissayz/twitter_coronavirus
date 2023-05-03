@@ -26,7 +26,7 @@ The following are the resulting graphs from running the visualization commands m
 
 ### Graphic Representation of #코로나바이러 by country
 
-![#코로나바이러 by country](#코로나바이러_country.png)
+![#코로나바이러 by country](코로나바이러_country.png)
 
 As we would expect, this hashtag was used mostly in Korea.
 
