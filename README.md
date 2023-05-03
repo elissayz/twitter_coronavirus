@@ -16,6 +16,8 @@ The following are the resulting graphs from running the visualization commands m
 
 ### Graphic Representation of #코로나바이러 by country
 
+![#코로나바이러 by country](#코로나바이러_country.png)
+
 As we would expect, this hashtag was used mostly in Korea.
 
 ## Graphic Representation of #coronavirus by language
@@ -31,10 +33,19 @@ most in that situation.
 
 ## Representation of #sick and #hospital
 
+I then used the file `alternative_reduce.py`
+
+The command
+
+```
+$ ./src/alternative_reduce.py --input_hashtags '#sick' '#hospital'
+```
+produces:
+
 ![#sick and #hospital through time](sick_hospital.png)
 
 ## Representation of #doctor and #nurse
 
-I also generated this plot using alternative reduce. It documents the trends in the use of #doctor and #nurse through time.
+Similarly, I generated this plot using alternative reduce. It documents the trends in the use of #doctor and #nurse through time.
 
 ![#doctor and #nurse in time](doctor_nurse.png)
